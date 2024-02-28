@@ -10,7 +10,7 @@ int main(int argc __attribute__((unused)), char *argv[])
 {
 	char *line = NULL;
 	char **command = NULL;
-	int status = 0, index = 0;
+	int status = 0;
 
 	while (1)
 	{
@@ -25,14 +25,19 @@ int main(int argc __attribute__((unused)), char *argv[])
 		}
 		else
 		{
-			index++;
 			command = tokens(line);
 			if (command == NULL)
 			{
 				continue;
 			}
+
+			status = my_execute(command, argv, status);
+			if (command == NULL)
+			{
+				free(line);
+				free(command);
+			}
 		}
-		status = my_execute(command, argv, index);
 	}
 	return (0);
 }

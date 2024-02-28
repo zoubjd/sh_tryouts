@@ -25,16 +25,8 @@ char _strcmp(const char *str1, const char *str2);
 int _strlen(const char *s);
 char *_strcat(char *d, const char *src);
 char *_strcpy(char *d, const char *src);
+int print_env(void);
 
-/*path*/
-char *make_env(char *path);
-char *make_path(char *path);
-
-/*error*/
-void print_error(char *name, char *command, int index);
-
-char* _itoa(int n);
-void reverse_string(char *buf, int len);
-int my_execute(char **command, char **argv, int dex);
+int my_execute(char **command, char **argv, int idex);
 
 #endif

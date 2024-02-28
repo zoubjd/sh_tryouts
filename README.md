@@ -1,1 +1,1 @@
-# sh_tryouts
+this is a simple shell readme file
